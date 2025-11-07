@@ -1,403 +1,189 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<!doctype html>
+<html lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>clean_report</title>
-  <style>
-    html {
-      line-height: 1.5;
-      font-family: Georgia, serif;
-      font-size: 20px;
-      color: #1a1a1a;
-      background-color: #fdfdfd;
-    }
-    body {
-      margin: 0 auto;
-      max-width: 36em;
-      padding-left: 50px;
-      padding-right: 50px;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      hyphens: auto;
-      overflow-wrap: break-word;
-      text-rendering: optimizeLegibility;
-      font-kerning: normal;
-    }
-    @media (max-width: 600px) {
-      body {
-        font-size: 0.9em;
-        padding: 1em;
-      }
-      h1 {
-        font-size: 1.8em;
-      }
-    }
-    @media print {
-      body {
-        background-color: transparent;
-        color: black;
-        font-size: 12pt;
-      }
-      p, h2, h3 {
-        orphans: 3;
-        widows: 3;
-      }
-      h2, h3, h4 {
-        page-break-after: avoid;
-      }
-    }
-    p {
-      margin: 1em 0;
-    }
-    a {
-      color: #1a1a1a;
-    }
-    a:visited {
-      color: #1a1a1a;
-    }
-    img {
-      max-width: 100%;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      margin-top: 1.4em;
-    }
-    h5, h6 {
-      font-size: 1em;
-      font-style: italic;
-    }
-    h6 {
-      font-weight: normal;
-    }
-    ol, ul {
-      padding-left: 1.7em;
-      margin-top: 1em;
-    }
-    li > ol, li > ul {
-      margin-top: 0;
-    }
-    blockquote {
-      margin: 1em 0 1em 1.7em;
-      padding-left: 1em;
-      border-left: 2px solid #e6e6e6;
-      color: #606060;
-    }
-    code {
-      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
-      font-size: 85%;
-      margin: 0;
-    }
-    pre {
-      margin: 1em 0;
-      overflow: auto;
-    }
-    pre code {
-      padding: 0;
-      overflow: visible;
-      overflow-wrap: normal;
-    }
-    .sourceCode {
-     background-color: transparent;
-     overflow: visible;
-    }
-    hr {
-      background-color: #1a1a1a;
-      border: none;
-      height: 1px;
-      margin: 1em 0;
-    }
-    table {
-      margin: 1em 0;
-      border-collapse: collapse;
-      width: 100%;
-      overflow-x: auto;
-      display: block;
-      font-variant-numeric: lining-nums tabular-nums;
-    }
-    table caption {
-      margin-bottom: 0.75em;
-    }
-    tbody {
-      margin-top: 0.5em;
-      border-top: 1px solid #1a1a1a;
-      border-bottom: 1px solid #1a1a1a;
-    }
-    th {
-      border-top: 1px solid #1a1a1a;
-      padding: 0.25em 0.5em 0.25em 0.5em;
-    }
-    td {
-      padding: 0.125em 0.5em 0.25em 0.5em;
-    }
-    header {
-      margin-bottom: 4em;
-      text-align: center;
-    }
-    #TOC li {
-      list-style: none;
-    }
-    #TOC ul {
-      padding-left: 1.3em;
-    }
-    #TOC > ul {
-      padding-left: 0;
-    }
-    #TOC a:not(:hover) {
-      text-decoration: none;
-    }
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SanDisk Corporation (SNDK) — 2025 Q3 财报解读</title>
+<style>
+  :root{
+    --text:#1f2328;
+    --muted:#5b6168;
+    --border:#e6e8eb;
+    --bg:#ffffff;
+    --code:#f6f8fa;
+    --link:#0969da;
+    --table-zebra:#fafbfc;
+    --maxw: 760px;
+    --radius:10px;
+  }
+  html,body{background:var(--bg);color:var(--text);margin:0;padding:0}
+  body{
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    font: 16px/1.85 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+          "PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",
+          "Noto Sans SC", Arial, "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    padding: 28px 18px 60px;
+    display:flex; justify-content:center;
+  }
+  .doc{max-width:var(--maxw); width:100%}
+  h1{font-size:28px; line-height:1.35; margin: 0 0 18px; letter-spacing:.2px}
+  h2{font-size:22px; margin: 28px 0 14px}
+  h3{font-size:18px; margin: 24px 0 12px}
+  p{margin: 10px 0 14px; color:var(--text)}
+  .muted{color:var(--muted)}
+  ul,ol{margin:8px 0 16px 22px}
+  li{margin:6px 0}
+  a{color:var(--link); text-decoration:none}
+  a:hover{text-decoration:underline}
+  hr{border:none; height:1px; background:var(--border); margin:28px 0}
+  blockquote{margin: 10px 0 16px; padding: 8px 12px; border-left:4px solid var(--border); background:#fafafa; border-radius:6px}
+  code,kbd,samp{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+  code{background:var(--code); padding:2px 6px; border-radius:6px; font-size:90%}
+  pre{background:var(--code); padding:14px; border-radius:10px; overflow:auto}
+  pre code{background:transparent; padding:0}
+  /* 表格 */
+  .table-wrap{overflow:auto; -webkit-overflow-scrolling:touch; margin: 12px 0 18px}
+  table{border-collapse:collapse; width:100%; min-width:640px; background:#fff; border:1px solid var(--border)}
+  thead th{
+    background:#f8f9fb; font-weight:600; text-align:left; border-bottom:1px solid var(--border)
+  }
+  th,td{padding:10px 12px; border-right:1px solid var(--border); vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  tr:nth-child(even) td{background:var(--table-zebra)}
+  th:last-child, td:last-child{border-right:none}
+  .badge{display:inline-block; padding:2px 8px; border-radius:100px; font-size:12px; line-height:18px; border:1px solid var(--border); background:#fff}
+  .badge.up{border-color:#16a34a33; background:#16a34a12; color:#0f7a2a}
+  .badge.down{border-color:#ef444433; background:#ef444412; color:#b91c1c}
+  .tag{display:inline-block; padding:2px 8px; background:#eef6ff; color:#0842a0; border-radius:999px; font-size:12px; margin-right:6px}
+  /* 小标题分隔 */
+  .section{padding-top:4px; border-top:1px solid var(--border); margin-top:26px}
+</style>
 </head>
 <body>
-<h1 id="sandisk-corporation-sndk">SanDisk Corporation (SNDK)</h1>
-<h3 id="一财报简评">一、财报简评</h3>
-<p>本季是 SanDisk 从西部数据独立上市后的首个完整季度，也是 flash
-行业需求仍处复苏期的一季。公司季内营收 <strong>16.95
-亿美元</strong>（下称 17 亿美元），环比下降
-<strong>10%</strong>、同比下降
-<strong>1%</strong>。受制于需求低迷与比特出货量、平均售价双双下滑，公司毛利率降至
-<strong>22.5%</strong>（非 GAAP 22.7%），较上一季下降近 10
-个百分点。由于独立上市导致会计处理调整，公司录得 <strong>18.3
-亿美元</strong>的商誉减值，致使 GAAP 净亏损 <strong>19.33
-亿美元</strong>，每股亏损 <strong>13.33
-美元</strong>。剔除一次性项目后，非 GAAP 每股亏损 <strong>0.30
-美元</strong>。</p>
-<p>市场早期对 SanDisk
-的预期并不高，此番营收超出指引、现金流转正，净亏损主要由减值所致，因此投资者关注的核心是业务基本面是否企稳。受益于供应缩减和提价措施，管理层指引下一季度毛利率和盈利有望环比改善。财报公布后股价短线出现反弹，反映市场对营收
-beat、毛利底部回升的积极解读。总体而言，本季财报用“<strong>收入
-beat、利润
-miss</strong>”形容较为合适，资本市场的焦点已从短期亏损转向毛利率拐点与现金流修复。</p>
-<h3 id="二公司信息">二、公司信息</h3>
-<p>SanDisk 是全球领先的 <strong>NAND
-闪存及存储方案</strong>供应商，核心业务包括为 PC 客户提供固态硬盘
-(SSD)、为企业云数据中心提供 eSSD、为消费电子市场提供存储卡及 U
-盘等产品。公司与 Kioxia（原东芝存储）共同投资的 Flash Ventures JV 负责
-wafer 制造，SanDisk 采购晶圆后封装并销售终端产品。2025 年 2 月 24
-日，西部数据完成旗下闪存业务的 <strong>剥离</strong>，SanDisk
-自此作为独立公司在纳斯达克交易。</p>
-<p>公司的核心商业逻辑是通过 <strong>技术领先与规模优势</strong>将复杂的
-NAND 制造转化为高性能、高可靠性的存储产品。当前重点战略包括：</p>
-<ul>
-<li><strong>客户端 / PC 存储</strong>：公司在 2024 年推出了 <strong>BiCS
-8</strong> 技术，提升单位存储密度和功耗表现；2025 年 Q3 已实现量产并向
-OEM 客户供货。PC 端需求驱动包括 Windows 10 退役更换周期、后疫情 PC
-替换以及 AI PC 需要更高容量存储等。</li>
-<li><strong>云和数据中心</strong>：公司强调高端企业级 eSSD
-产品，报告期云端比特分配提升至 <strong>12%</strong>，较上年同期的 8%
-显著上升，取得 NVIDIA Gen5 eSSD
-认证，并受益于大型云厂商资本支出持续增加。</li>
-<li><strong>消费和新兴业务</strong>：推出高性能移动 SSD 与 U
-盘并涉足专业级存储卡，荣获红点设计奖等。此外在汽车存储方面获得福特年度供应商等认定，并推出用于自动驾驶的
-UFS 4.1 方案。</li>
-</ul>
-<p>一句话总结：SanDisk 正在通过
-<strong>技术进步（BiCS 8、Gen5 eSSD）和产品结构优化</strong>来穿越 NAND
-行业周期，摆脱对消费存储的单一依赖，并利用独立上市后的灵活性以价换量，力图完成从“硬盘制造商的附属业务”向
-<strong>闪存独立龙头</strong>的转型。</p>
-<h3 id="三关键数据实际-vs-预期">三、关键数据：实际 vs 预期</h3>
-<table style="width:100%;">
-<colgroup>
-<col style="width: 14%" />
-<col style="width: 18%" />
-<col style="width: 24%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-<col style="width: 14%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">指标</th>
-<th style="text-align: left;">实际值</th>
-<th style="text-align: left;">市场预期</th>
-<th style="text-align: left;">YoY</th>
-<th style="text-align: left;">QoQ</th>
-<th style="text-align: left;">结果</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><strong>收入（Revenue）</strong></td>
-<td style="text-align: left;"><strong>1.695 B 美元</strong></td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;">-1%</td>
-<td style="text-align: left;">-10%</td>
-<td style="text-align: left;"><strong>beat</strong>（高于公司指引）</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>EPS（每股收益）</strong></td>
-<td
-style="text-align: left;">GAAP <strong>–13.33 美元</strong>；Non‑GAAP <strong>–0.30 美元</strong></td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;">vs. +0.19 美元（上一年同期）</td>
-<td style="text-align: left;">vs. +1.23 美元（上一季）</td>
-<td
-style="text-align: left;"><strong>miss</strong>（减值导致巨额亏损）</td>
-</tr>
-<tr class="odd">
-<td
-style="text-align: left;"><strong>毛利率（Gross Margin）</strong></td>
-<td
-style="text-align: left;">GAAP <strong>22.5%</strong>，Non‑GAAP <strong>22.7%</strong></td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;">-4.7 ppt</td>
-<td style="text-align: left;">-9.8 ppt</td>
-<td style="text-align: left;">—</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>净利润（Net Income）</strong></td>
-<td
-style="text-align: left;">GAAP <strong>–19.33 亿美元</strong>；Non‑GAAP <strong>–0.43 亿美元</strong></td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;">n/a</td>
-<td style="text-align: left;">n/a</td>
-<td style="text-align: left;">—</td>
-</tr>
-<tr class="odd">
-<td
-style="text-align: left;"><strong>经营现金流（Operating Cash Flow）</strong></td>
-<td style="text-align: left;"><strong>2600 万美元</strong></td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;">转正（去年同期 –1200 万美元）</td>
-<td style="text-align: left;">较上一季下降 73%</td>
-<td style="text-align: left;">—</td>
-</tr>
-<tr class="even">
-<td
-style="text-align: left;"><strong>Adjusted Free Cash Flow</strong></td>
-<td style="text-align: left;"><strong>2.20 亿美元</strong></td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;">+153% YoY</td>
-<td style="text-align: left;">+142% QoQ</td>
-<td style="text-align: left;">—</td>
-</tr>
-</tbody>
-</table>
-<p>整体来看，尽管收入和现金流表现超过预期，但受巨额商誉减值拖累，公司盈利指标全面转负。经营现金流小幅转正、自由现金流大幅改善，显示营运效率有所回升。</p>
-<h3 id="四指引-vs-市场预期">四、指引 vs 市场预期</h3>
-<p>管理层公布的 2025 财年第四季度指引显示：</p>
-<ul>
-<li><strong>收入区间 17.5 亿–18.5 亿美元</strong>；</li>
-<li><strong>Non‑GAAP 毛利率</strong>预计
-<strong>25.5%–27.0%</strong>，较本季提高约 3 个百分点；</li>
-<li><strong>Non‑GAAP 营业费用</strong>控制在
-<strong>3.95–4.05 亿美元</strong>；</li>
-<li><strong>Non‑GAAP EPS</strong>预计 <strong>–0.10 至
-+0.15 美元</strong>；</li>
-<li>指导每季摊薄股数约 <strong>1.46 亿股</strong>。</li>
-</ul>
-<p>由于上季大幅亏损源于一次性商誉减值，指引中未提供 GAAP
-EPS。管理层表示，他们在供应链管理、价格策略和投资上仍保持审慎乐观，预计随着
-BiCS 8
-量产、库存去化和价格回升，下一季毛利率及盈利有望明显改善。市场方面，外部分析师（LSEG）对
-2025 年底季度的平均预期为收入约 21.6 亿美元、EPS
-1.00 美元，显著高于公司给出的近期指引，说明 Sell‑side
-预计下半年业务会快速回暖，双方预期差构成潜在催化。</p>
-<h3 id="五增长与利润率">五、增长与利润率</h3>
-<p><strong>增长驱动力</strong>——本季营收下降的主要原因在于 NAND
-行业持续库存调整和价格下跌。公司在财报披露中称，比特出货量<strong>同比小幅下降</strong>，平均售价（ASP）<strong>高个位数百分比下滑</strong>。</p>
-<ul>
-<li><p><strong>云 / 数据中心</strong>：本季云业务收入
-1.97 亿美元，环比下降 21%。管理层指出，云端比特分配提高至 12%，远高于上年同期
-8%，公司正在扩大与大型云厂商的合作，并获得 NVIDIA Gen5 eSSD
-认证。云计算巨头 2024 年资本支出高达 2400 亿美元，预计 2025 年将增长 40%
-至 3300 亿美元，SanDisk 有望受益。</p></li>
-<li><p><strong>客户端（PC）</strong>：客户端营收 9.27 亿美元，环比下降
-10%。PC 行业仍处于库存调整期，但管理层在演示中强调
-Windows 10 退役替换、后疫情换机、以及 AI PC 需求将刺激下半年 PC
-存储需求。BiCS8 SSD 已开始量产并获得汽车及游戏厂商设计中标，预计 Q4
-FY2025 还有更多客户认证。此外公司在汽车领域推出全球首款 UFS 4.1
-存储方案，并荣膺福特年度供应商。</p></li>
-<li><p><strong>消费 &amp; 其他</strong>：消费业务收入
-5.71 亿美元，环比下降 5%。公司推出高性能移动 SSD、USB
-和专业存储卡并获红点设计奖、NAB TV Tech Best of Show
-等行业认可。消费端需求因手机、摄影等终端更新周期而保持稳定。</p></li>
-</ul>
-<p><strong>利润率变化</strong>——毛利率从上一季的 32.3% 大幅下滑至
-22.5%，同比下滑 4.7 个百分点。此主要是 NAND
-价格走低及闲置产能成本增加所致。非 GAAP 毛利率为 22.7%，与 GAAP
-几乎相同，显示大部分成本压力来自库存及价格，而非一次性项目。指引显示毛利率将恢复至
-25.5%–27.0%，管理层认为由于供应收缩和提价，毛利率已在本季触底。</p>
-<p><strong>盈利能力和现金流</strong>——由于 18.3 亿美元商誉减值，GAAP
-净亏损 19.33 亿美元。非 GAAP 净亏损 4300 万美元。营业现金流
-2600 万美元；自由现金流 –1800 万美元，调整后自由现金流
-2.20 亿美元，远高于去年同期 8700 万美元，主要得益于收到来自合作伙伴
-Flash Ventures 的分红、卖出资产及运营效率提升。公司持有现金
-15.07 亿美元，为未来资本开支和可能的股权回购提供保障。总体来看，<strong>亏损是会计减值导致的“一次性
-ICU 手术”，核心业务已从 ICU 转入普通病房</strong>。</p>
-<h3 id="六电话会要点-管理层重点">六、电话会要点 / 管理层重点</h3>
-<p>本季电话会（及投资者演示）中，管理层强调以下几个重点：</p>
-<ol type="1">
-<li><strong>供应与价格策略</strong>：CEO David Goeckeler
-强调独立上市后的首季度“执行出色”，公司通过
-<strong>减产匹配需求并启动提价</strong>
-来改善回报。他指出将继续聚焦投资回报率，维持适度库存，确保新技术转移顺利。</li>
-<li><strong>技术创新</strong>：BiCS 8（第八代
-3D NAND）已进入量产，具有业界领先的速度、延迟和功耗优势，预计将推动全年毛利率提升。公司正进行
-Gen5 eSSD 与云厂商合作，并积极推进 UFS 4.1、汽车级 SSD 等新产品。</li>
-<li><strong>需求展望</strong>：管理层预计下半年需求将逐步走强。PC
-换机周期、AI PC
-兴起及智能手机升级将驱动客户端业务；消费业务保持平稳，云业务将在 2025
-年随 hyperscaler CAPEX 扩大而反弹。</li>
-<li><strong>资本开支与现金管理</strong>：2025 财年九个月公司总资本开支约
-5.02 亿美元，占收入 9.2%。管理层表示会综合利用外部资金和内部折旧现金流来支持投资，并计划通过调整
-JV 投资和后端设备采购优化现金流。</li>
-<li><strong>独立后的战略</strong>：公司 2025 年 2
-月从西部数据剥离后，组织架构更加灵活。管理层强调聚焦客户需求和创新，强调成为独立的“闪存纯粹玩家”是未来竞争优势的关键。</li>
-</ol>
-<h3 id="七持续关注的老问题">七、持续关注的老问题</h3>
-<ul>
-<li><strong>需求与库存周期</strong>：NAND 行业需求波动大，SanDisk
-过去几年经历库存高企、价格暴跌。本季营收仍同比小幅下降，管理层表示通过减产和提价控制供给，库存拐点出现，但需求恢复仍需关注
-PC 与智能手机周期。这是市场关注的“老问题”。</li>
-<li><strong>毛利率持续性</strong>：毛利率重挫主要是 ASP
-下跌导致。虽然公司预计 Q4 毛利率会环比回升，但是否能在 2026
-财年进一步提升取决于需求复苏和价格纪律。如果价格战卷土重来，毛利率改善可能难以持续。</li>
-<li><strong>与西部数据关系和商誉减值</strong>：剥离导致公司一次性计提巨额商誉减值。剥离后与西部数据在
-JV
-中的合作关系和债务分摊仍是投资者关心的问题。本季财报中公司对西部数据的往来账款发生调整。</li>
-<li><strong>资本密集度</strong>：NAND 行业资本开支高昂，BiCS 8
-及未来节点升级需要巨额投资。虽然公司现金充足，但是否能通过自有现金流支撑技术迭代、同时兼顾回馈股东，是长期关注点。</li>
-</ul>
-<h3 id="八风险与机会">八、风险与机会</h3>
-<p><strong>机会（多头逻辑）：</strong></p>
-<ul>
-<li><strong>需求修复与行业景气回暖</strong>：管理层预计 2025 下半年起 PC
-换机周期、AI
-PC、新一代智能手机及云数据中心投资将拉动存储需求。随着供需平衡恢复，ASP
-与毛利率可望回升，收入和盈利有望出现“V”型反弹。</li>
-<li><strong>技术领先赋能新产品</strong>：BiCS 8、Gen5 eSSD、UFS 4.1
-等先进技术推进，意味着 SanDisk
-具备对抗三星、铠侠、美光的竞争力。成功量产并获得客户认证将提升市场份额和定价权。</li>
-<li><strong>独立上市后的灵活性</strong>：剥离西部数据后，SanDisk
-可以更灵活地进行资本配置与战略合作，管理层强调专注于闪存业务并优化投资回报，这有利于长期增长。</li>
-<li><strong>强劲的现金和调整后自由现金流</strong>：公司拥有
-15.07 亿美元现金和
-2.20 亿美元调整后自由现金流，为研发、投资和潜在回购提供资金保障。</li>
-</ul>
-<p><strong>风险（空头逻辑）：</strong></p>
-<ul>
-<li><strong>行业周期性与价格风险</strong>：NAND
-行业高度竞争且供需敏感。若需求复苏不及预期或竞争对手大幅扩产，价格再次下行将抹去毛利率改善，并可能导致经营现金流重新转负。</li>
-<li><strong>竞争压力</strong>：三星、美光、SK 海力士等巨头在技术与规模上具备优势，BiCS 8
-等新技术若不达预期，市场份额可能受到侵蚀。</li>
-<li><strong>资本支出压力与负债风险</strong>：支持新技术需要持续高投入。虽然公司自由现金流改善，但未来资本开支仍处高位，并存在与西部数据的历史债务往来。</li>
-<li><strong>宏观及地缘风险</strong>：全球经济放缓、贸易摩擦或地缘政治事件可能影响终端需求；同时汇率波动和利率上升也可能影响成本结构和现金流。</li>
-</ul>
-<p>一句形象总结：<strong>收入开始恢复，但利润还在地上爬。</strong>
-未来若需求回暖和价格升温，SanDisk
-有望重回高质量增长，但路途仍伴随行业周期和竞争的波动。</p>
-<h3 id="九特别说明-投资启示">九、特别说明 / 投资启示</h3>
-<p>本季财报显示，SanDisk 的核心经营正在复苏：营收高于指引、非 GAAP
-毛利率虽低但有望触底反弹、自由现金流明显改善。这说明公司在减产、涨价、推出新技术之后，基本面正在修复。然而巨额商誉减值导致的亏损使财报账面非常丑陋，容易引发短期情绪波动。投资者需要区分
-<strong>“会计亏损”与 “现金流回暖”</strong>。中长期看，随着 PC
-与云存储需求复苏、BiCS 8 等新技术放量，SanDisk
-有望实现盈利拐点并释放自由现金流。总体而言，<strong>基本面在修，情绪面在补</strong>，短期波动提供了中长期布局的窗口，但仍需密切关注行业供需和竞争格局变化。</p>
+<main class="doc">
+  <h1>SanDisk Corporation (SNDK)</h1>
+
+  <h2>一、财报简评</h2>
+  <p>本季是 SanDisk 从西部数据独立上市后的首个完整季度，也是 flash 行业需求仍处复苏期的一季。公司季内营收 <strong>16.95 亿美元</strong>（下称 17 亿美元），<span class="badge down">QoQ -10%</span>、<span class="badge down">YoY -1%</span>，但仍高于公司此前指引区间。受制于需求低迷与比特出货量、平均售价双双下滑，公司毛利率降至 <strong>22.5%</strong>（非 GAAP 22.7%），较上一季下降近 10 个百分点。由于独立上市导致会计处理调整，公司录得 <strong>18.3 亿美元</strong>的商誉减值，致使 GAAP 净亏损 <strong>19.33 亿美元</strong>，每股亏损 <strong>13.33 美元</strong>。剔除一次性项目后，非 GAAP 每股亏损 <strong>0.30 美元</strong>。</p>
+  <p>市场早期对 SanDisk 的预期并不高，此番营收超出指引、现金流转正，净亏损主要由减值所致，因此投资者关注的核心是业务基本面是否企稳。受益于供应缩减和提价措施，管理层指引下一季度毛利率和盈利有望环比改善。总体而言，本季用“<strong>收入 beat、利润 miss</strong>”形容较为合适，焦点正从短期亏损转向毛利率拐点与现金流修复。</p>
+
+  <h2>二、公司信息</h2>
+  <p>SanDisk 为全球领先的 <strong>NAND 闪存与存储方案</strong>供应商，业务覆盖 PC 端 SSD、企业级 eSSD、及消费类存储卡/USB。2025 年 2 月公司自西部数据剥离后独立上市。</p>
+  <ul>
+    <li><strong>客户端 / PC：</strong>2024 推出 <strong>BiCS 8</strong> 技术并在 2025 Q3 量产；需求驱动包括 Windows 10 退役、更换周期与 AI PC 带来的更高容量需求。</li>
+    <li><strong>云与数据中心：</strong>云端比特分配升至 <strong>12%</strong>（去年 8%），获得 NVIDIA Gen5 eSSD 认证，受益于 hyperscaler CAPEX 上行。</li>
+    <li><strong>消费与新兴：</strong>移动 SSD、专业存储卡等持续迭代，并在汽车领域推出 UFS 4.1、获主机厂认可。</li>
+  </ul>
+  <p><em>一句话：</em>凭借 <strong>BiCS 8 / Gen5 eSSD</strong> 与产品结构优化，SanDisk 争取穿越 NAND 周期、减少对消费存储的单一依赖，走向独立闪存龙头。</p>
+
+  <h2>三、关键数据：实际 vs 预期</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>指标</th><th>实际值</th><th>市场预期</th><th>YoY</th><th>QoQ</th><th>结果</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>收入（Revenue）</strong></td>
+          <td><strong>1.695 B 美元</strong></td>
+          <td>—</td>
+          <td>-1%</td>
+          <td>-10%</td>
+          <td><strong>beat</strong>（高于公司指引）</td>
+        </tr>
+        <tr>
+          <td><strong>EPS（每股收益）</strong></td>
+          <td>GAAP <strong>-13.33 美元</strong>；Non-GAAP <strong>-0.30 美元</strong></td>
+          <td>—</td>
+          <td>vs. 去年 +0.19</td>
+          <td>vs. 上季 +1.23</td>
+          <td><strong>miss</strong>（减值拖累）</td>
+        </tr>
+        <tr>
+          <td><strong>毛利率（Gross Margin）</strong></td>
+          <td>GAAP <strong>22.5%</strong>；Non-GAAP <strong>22.7%</strong></td>
+          <td>—</td>
+          <td>-4.7ppt</td>
+          <td>-9.8ppt</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td><strong>净利润（Net Income）</strong></td>
+          <td>GAAP <strong>-19.33 亿美元</strong>；Non-GAAP <strong>-0.43 亿美元</strong></td>
+          <td>—</td>
+          <td>n/a</td>
+          <td>n/a</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td><strong>经营现金流（Operating Cash Flow）</strong></td>
+          <td><strong>2600 万美元</strong></td>
+          <td>—</td>
+          <td>由负转正</td>
+          <td>环比 -73%</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td><strong>Adjusted Free Cash Flow</strong></td>
+          <td><strong>2.20 亿美元</strong></td>
+          <td>—</td>
+          <td>+153%</td>
+          <td>+142%</td>
+          <td>—</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="muted">简评：收入略超、自有现金流改善，但会计减值导致盈利 miss。</p>
+
+  <h2>四、指引 vs 市场预期</h2>
+  <ul>
+    <li><strong>Q4 指引收入：</strong>17.5–18.5 亿美元；</li>
+    <li><strong>Non-GAAP 毛利率：</strong>25.5%–27.0%，较本季提升约 3ppt；</li>
+    <li><strong>Non-GAAP Opex：</strong>3.95–4.05 亿美元；</li>
+    <li><strong>Non-GAAP EPS：</strong>-0.10 至 +0.15；</li>
+    <li><strong>摊薄股数：</strong>约 1.46 亿。</li>
+  </ul>
+  <p>管理层口径偏<strong>谨慎乐观</strong>：供应收缩+提价，随 BiCS 8 放量与库存消化，毛利率预计环比走高。Sell-side 对年末季度的收入/EPS一致预期显著高于公司近季指引，预期差可能成为催化。</p>
+
+  <h2>五、增长与利润率</h2>
+  <p><strong>增长驱动力：</strong>本季下滑主因是 NAND 价格承压与库存调整，比特出货小幅下行、ASP 高个位数下跌。</p>
+  <ul>
+    <li><strong>云/数据中心：</strong>收入约 1.97 亿，<span class="badge down">QoQ -21%</span>、<span class="badge up">YoY +103%</span>；比特分配升至 12%，拿到 Gen5 eSSD 认证，受益于 2025 年 hyperscaler CAPEX 继续扩张。</li>
+    <li><strong>客户端（PC）：</strong>收入 9.27 亿，<span class="badge down">QoQ -10%</span>/<span class="badge down">YoY -10%</span>；AI PC + Win10 退役推动更大容量，BiCS8 量产，更多 OEM 认证在路上。</li>
+    <li><strong>消费：</strong>收入 5.71 亿，<span class="badge down">QoQ -5%</span>、YoY 持平；移动 SSD/专业卡线获奖带动品牌力。</li>
+  </ul>
+  <p><strong>利润率：</strong>毛利率自 32.3% 降至 22.5%，主要由 ASP 走低与闲置成本所致；Non-GAAP 与 GAAP接近，说明压力以经营性为主。指引显示 Q4 恢复至 25.5%–27.0%，大概率已触底。</p>
+  <p><strong>现金流：</strong>会计减值致 GAAP 亏损放大，但经营现金流转正、调整后自由现金流 2.2 亿显著改善，现金余额 15.07 亿为 Capex/潜在回购提供空间。</p>
+
+  <h2>六、电话会要点 / 管理层重点</h2>
+  <ol>
+    <li><strong>供给与定价：</strong>维持减产与提价并行，库存纪律优先，聚焦 ROI。</li>
+    <li><strong>技术节点：</strong>BiCS 8 量产推进、Gen5 eSSD/车规 UFS 4.1 路线清晰。</li>
+    <li><strong>需求展望：</strong>PC 换机 + AI PC、手机升级、云 CAPEX 构成 2025 下半年的需求主线。</li>
+    <li><strong>资本开支：</strong>FY2025 前三季 Capex 约 5.02 亿（占收约 9.2%），主要投向 BiCS 8。</li>
+    <li><strong>独立后的策略：</strong>更灵活的资本配置与以客户为中心的产品节奏，目标做“闪存纯粹玩家”。</li>
+  </ol>
+
+  <h2>七、持续关注的老问题</h2>
+  <ul>
+    <li><strong>需求/库存：</strong>拐点出现但尚未全面复苏，PC/手机节奏需跟踪。</li>
+    <li><strong>毛利率持续性：</strong>若价格战再起，改善难以延续。</li>
+    <li><strong>与西部数据/合资 JV 关系：</strong>剥离后的往来与现金流影响需持续披露跟踪。</li>
+    <li><strong>资本密集度：</strong>节点跃迁资金需求与股东回馈如何平衡。</li>
+  </ul>
+
+  <h2>八、风险与机会</h2>
+  <p><strong>机会：</strong>需求修复、提价与结构优化带动毛利回升；BiCS 8/Gen5 eSSD/UFS 4.1 量产放量；独立后的资本配置更灵活；现金与自由现金流为研发与潜在回购提供弹性。</p>
+  <p><strong>风险：</strong>NAND 高度周期性与价格下行风险；一线对手技术/规模压力；高 Capex 与可能的负债波动；宏观与地缘不确定性。</p>
+  <blockquote><strong>一句话：</strong>收入开始恢复，但利润还在地上爬。</blockquote>
+
+  <h2>九、特别说明 / 投资启示</h2>
+  <p>本季显示基本面在修复：收入高于指引、毛利率大概率触底、调整后自由现金流显著改善；巨额减值造成的账面亏损不应与现金创造能力混为一谈。<br>
+  <strong>人话结论：</strong>基本面在修，情绪面在补；波动中看拐点与兑现。</p>
+</main>
 </body>
 </html>
